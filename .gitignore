@@ -1,0 +1,89 @@
+# Dependencis
+atart-dev.bpi.js
+st
+test-atemporary) exclude nt ones, importathees (keep est fil
+
+# Tdb
+*.sqlite*.atabase
+cel
+
+# Dercel
+.ver.sw?
+
+# V.sln
+*njsproj
+*vs*
+*..suo
+*.ntn
+.idea
+*.jsoextensions
+!.vscode//*codevsiles
+.and fectories  Editor dir
+temp/
+
+#
+tmp/y foldersemporar
+
+# Tcel-cachecache
+.par/)
+.js.org//parcel(https:che  cal-bundler
+
+# parcentegrityile
+.yarn-itegrity f Yarn In
+*.tgz
+
+# pack't of 'npmpu
+# Outl_history
+de_reptory
+.noEPL hisptional R
+
+# Opm.n
+he directoryaconal npm c
+
+# Optim_packages/
+jspdirectoriespendency age/
+
+# Deovernbul
+c ista tools like byory useddirectrage Covelock
+
+# ed
+*.pid.*.seid
+
+pids
+*.ptadae untimlog
+
+# Rgs
+*.s
+lo
+# Logmbs.db
+e
+Thues
+.DS_StorS filswo
+
+# Oswp
+*..idea/
+*..vscode/
+IDE files
+cal
+
+# ion.loproductocal
+.env.nv.test.lt.local
+.emen.develop
+.env
+.env.local.envbles
+riaent vavironm# En
+out/
+
+ld/
+.next//
+buiuts
+dist# Build outp
+r.log*
+
+yarn-errolog*arn-debug.
+ybug.log*pm-de/
+nesode_moduln
+node_modules
+"dist/" 
+".env" 
+".vercel" 
