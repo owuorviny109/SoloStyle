@@ -1,8 +1,7 @@
-import { Product, ProductVariant } from '@/types'
+import { Product } from '@/types'
 
 // Mock API service - In a real app, this would call your backend API
 export class ApiService {
-  private static baseUrl = import.meta.env.VITE_API_URL || '/api'
 
   static async getProducts(filters?: {
     category?: string

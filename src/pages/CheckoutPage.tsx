@@ -4,10 +4,9 @@ import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import { CreditCard, Truck, Shield, Phone, User, MapPin, Loader2 } from 'lucide-react'
+import { CreditCard, Truck, Shield, User, MapPin, Loader2 } from 'lucide-react'
 import { useCartStore } from '@/store/cartStore'
 import { formatCurrency, formatPhoneNumber, validatePhoneNumber, generateOrderNumber } from '@/lib/utils'
-import { mpesaService } from '@/lib/mpesa'
 import toast from 'react-hot-toast'
 
 // Form validation schema
@@ -35,8 +34,7 @@ const CheckoutPage = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
-    watch
+    formState: { errors }
   } = useForm<CheckoutForm>({
     resolver: zodResolver(checkoutSchema)
   })
@@ -127,7 +125,7 @@ const CheckoutPage = () => {
         toast.success('Payment request sent to your phone!')
 
         // Start polling for payment status (we'll implement this)
-        pollPaymentStatus(newOrderNumber, stkPushData.CheckoutRequestID)
+        pollPaymentStatus(newOrderNumber)
 
       } else {
         throw new Error(stkPushData.ResponseDescription || 'Payment initiation failed')
@@ -141,7 +139,7 @@ const CheckoutPage = () => {
     }
   }
 
-  const pollPaymentStatus = async (orderId: string, checkoutRequestId: string) => {
+  const pollPaymentStatus = async (orderId: string) => {
     // Poll for payment status every 5 seconds for up to 2 minutes
     let attempts = 0
     const maxAttempts = 24 // 2 minutes
