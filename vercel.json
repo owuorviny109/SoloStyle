@@ -24,11 +24,6 @@
     }
   ],
   "env": {
-    "VITE_MPESA_ENVIRONMENT": "sandbox",
-    "VITE_MPESA_CONSUMER_KEY": "@mpesa_consumer_key",
-    "VITE_MPESA_CONSUMER_SECRET": "@mpesa_consumer_secret",
-    "VITE_MPESA_SHORTCODE": "@mpesa_shortcode",
-    "VITE_MPESA_PASSKEY": "@mpesa_passkey",
-    "VITE_MPESA_CALLBACK_URL": "@mpesa_callback_url"
+    "VITE_MPESA_ENVIRONMENT": "sandbox"
   }
 }
