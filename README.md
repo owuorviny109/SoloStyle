@@ -1,145 +1,180 @@
-# SoleStyle - Premium Shoes Store with M-Pesa Integration
+# M-Pesa E-commerce Integration Learning Project
 
-A modern, responsive shoes e-commerce store built with React, TypeScript, and M-Pesa payment integration. This project demonstrates how to build a production-ready online store with secure payment processing using Safaricom's Daraja API.
+A hands-on learning project demonstrating M-Pesa payment integration in a modern React e-commerce application. Built to understand Safaricom's Daraja API implementation and real-world payment processing.
 
-## 🚀 Features
+## Learning Goals Achieved
 
-- **Modern UI/UX**: Beautiful, responsive design with smooth animations
-- **M-Pesa Integration**: Secure STK Push payments with Daraja API
-- **Real-time Inventory**: Live stock management and reservation system
-- **Shopping Cart**: Persistent cart with local storage
-- **Order Management**: Complete order lifecycle tracking
-- **Mobile Optimized**: PWA-ready with mobile-first design
-- **TypeScript**: Full type safety throughout the application
+### M-Pesa Integration Mastery
+- **OAuth Token Management** - Automated token generation and refresh
+- **STK Push Implementation** - Customer-initiated payments via phone
+- **Callback Handling** - Real-time payment status updates
+- **Error Handling** - Robust payment failure management
+- **Sandbox Testing** - Complete testing environment setup
 
-## 🛠️ Tech Stack
+### Technical Skills Developed
+- **React 18 + TypeScript** - Modern frontend development
+- **Express.js API** - Backend payment processing
+- **State Management** - Zustand for cart and order state
+- **Form Validation** - React Hook Form + Zod schemas
+- **Responsive Design** - Mobile-first Tailwind CSS
+- **Production Deployment** - Vercel deployment with environment variables
 
-- **Frontend**: React 18, TypeScript, Vite
-- **Styling**: Tailwind CSS, Framer Motion
-- **State Management**: Zustand
-- **Forms**: React Hook Form + Zod validation
-- **Database**: Supabase (PostgreSQL)
-- **ORM**: Prisma
-- **Payments**: M-Pesa Daraja API
-- **Deployment**: Vercel
+## What Was Built
 
-## 📦 Installation
+### Core Features
+- **12-Product Catalog** - Nike, Adidas, Puma, Vans, Converse shoes
+- **Shopping Cart** - Add/remove items with persistent storage
+- **M-Pesa Checkout** - Complete payment flow with phone verification
+- **Order Management** - Order tracking and confirmation system
+- **Responsive UI** - Works on desktop, tablet, and mobile
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd shoes-store-mpesa
-   ```
+### Technical Architecture
+```
+Frontend (React/TypeScript)
+├── Product Catalog & Cart
+├── Checkout Form & Validation
+└── Payment Status Tracking
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+Backend (Express.js)
+├── M-Pesa OAuth Handler
+├── STK Push API
+└── Payment Callback Processor
 
-3. **Set up environment variables**
-   ```bash
-   cp .env.example .env
-   ```
-   Fill in your Supabase and M-Pesa credentials.
+M-Pesa Integration
+├── Sandbox Environment
+├── Real Phone Testing
+└── Payment Confirmation Flow
+```
 
-4. **Set up the database**
-   ```bash
-   npm run db:push
-   npm run db:seed
-   ```
+## Key Technical Implementations
 
-5. **Start the development server**
-   ```bash
-   npm run dev
-   ```
+### M-Pesa Payment Flow
+```javascript
+// 1. Generate OAuth Token
+const token = await generateOAuthToken()
 
-## 🔧 Configuration
+// 2. Initiate STK Push
+const stkResponse = await initiateSTKPush({
+  phoneNumber: '254708374149',
+  amount: 1200,
+  orderId: 'ORD-123'
+})
 
-### Supabase Setup
-1. Create a new Supabase project
-2. Copy your project URL and anon key to `.env`
-3. Run the Prisma migrations to set up your database schema
+// 3. Handle Callback
+app.post('/api/mpesa/callback', (req, res) => {
+  const { ResultCode, CallbackMetadata } = req.body.Body.stkCallback
+  // Process payment result
+})
+```
 
-### M-Pesa Daraja API Setup
-1. Register at [Safaricom Developer Portal](https://developer.safaricom.co.ke/)
-2. Create a new app and get your credentials
-3. Add your credentials to `.env`
-4. Set up your callback URL (use ngrok for local development)
+### Phone Number Validation
+```javascript
+// Kenyan phone number formatting
+const formatPhoneNumber = (phone) => {
+  if (phone.startsWith('0')) return `254${phone.slice(1)}`
+  if (phone.startsWith('254')) return phone
+  return `254${phone}`
+}
+```
 
-## 📱 M-Pesa Integration
+### Environment Configuration
+```bash
+# M-Pesa Sandbox Credentials
+VITE_MPESA_ENVIRONMENT=sandbox
+VITE_MPESA_CONSUMER_KEY=your_consumer_key
+VITE_MPESA_CONSUMER_SECRET=your_consumer_secret
+VITE_MPESA_SHORTCODE=174379
+VITE_MPESA_PASSKEY=your_passkey
+VITE_MPESA_CALLBACK_URL=your_callback_url
+```
 
-This project demonstrates:
-- OAuth token generation and management
-- STK Push payment initiation
-- Callback handling and order updates
-- Error handling and retry logic
-- Sandbox to production transition
+## M-Pesa Integration Learnings
 
-### Payment Flow
-1. Customer adds items to cart
-2. Proceeds to checkout with phone number
-3. STK Push sent to customer's phone
-4. Customer enters M-Pesa PIN
-5. Payment callback updates order status
-6. Order confirmation sent to customer
+### Key Discoveries
+1. **Sandbox Behavior** - Test numbers return hardcoded responses
+2. **Callback Timing** - Callbacks can take 5-30 seconds
+3. **Error Codes** - Different failure scenarios require specific handling
+4. **Phone Formats** - Must use 254XXXXXXXXX format
+5. **Token Expiry** - OAuth tokens expire every hour
 
-## 🎨 Design System
+### Common Challenges Solved
+- **CORS Issues** - Proper Express server setup
+- **Environment Variables** - Vite vs Node.js environment handling
+- **Callback URLs** - Local development with ngrok
+- **Phone Validation** - Kenyan number format requirements
+- **Payment Polling** - Frontend status checking implementation
 
-The project includes a comprehensive design system with:
-- Consistent color palette
-- Typography scale
-- Component library
-- Animation patterns
-- Responsive breakpoints
+## Deployment Process
 
-## 📚 Learning Objectives
+### Local Development
+```bash
+# Start both frontend and backend
+npm run dev:full
 
-This project teaches:
-- M-Pesa payment integration from scratch
-- Modern React development patterns
-- TypeScript best practices
+# Or separately
+npm run dev:server  # Express API on :3001
+npm run dev         # Vite frontend on :3000
+```
+
+### Production Deployment
+```bash
+# Deploy to Vercel
+npx vercel --prod
+
+# Add environment variables in Vercel dashboard
+# Update callback URL to production domain
+```
+
+## Project Metrics
+
+- **12 Products** - Complete shoe catalog
+- **5 Brands** - Nike, Adidas, Puma, Vans, Converse
+- **3 Pages** - Home, About, Contact with modern design
+- **100% Mobile Responsive** - Works on all devices
+- **Real M-Pesa Testing** - Actual payment integration
+
+## Skills Demonstrated
+
+### Frontend Development
+- Modern React patterns and hooks
+- TypeScript for type safety
+- Responsive design with Tailwind CSS
+- Form handling and validation
 - State management with Zustand
-- Database design with Prisma
-- Responsive UI development
-- Production deployment strategies
 
-## 🚀 Deployment
+### Backend Development
+- Express.js API development
+- M-Pesa API integration
+- Environment variable management
+- Error handling and logging
+- Webhook/callback processing
 
-### Vercel Deployment
-1. Connect your GitHub repository to Vercel
-2. Add environment variables in Vercel dashboard
-3. Deploy with automatic CI/CD
+### DevOps & Deployment
+- Git version control
+- Vercel deployment
+- Environment configuration
+- Production vs development setup
 
-### Environment Variables for Production
-- Update `MPESA_ENVIRONMENT` to `production`
-- Use production M-Pesa credentials
-- Set production callback URLs
+## Live Demo
 
-## 📖 Documentation
+**Production URL**: https://mpesa-ecommerce-blueprint.vercel.app/
 
-- [M-Pesa Integration Guide](docs/mpesa-integration.md)
-- [Database Schema](docs/database-schema.md)
-- [API Documentation](docs/api-documentation.md)
-- [Deployment Guide](docs/deployment.md)
+Test the complete M-Pesa integration flow:
+1. Browse products and add to cart
+2. Proceed to checkout
+3. Enter Kenyan phone number (use 0708374149 for sandbox)
+4. Complete M-Pesa payment flow
 
-## 🤝 Contributing
+## Next Steps for Production
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- Safaricom for the Daraja API
-- Supabase for the backend infrastructure
-- The React and TypeScript communities
+- [ ] Add user authentication
+- [ ] Implement order history
+- [ ] Add inventory management
+- [ ] Set up email notifications
+- [ ] Add analytics tracking
+- [ ] Implement proper error logging
+- [ ] Add unit and integration tests
 
 ---
 
-**Note**: This is a learning project for M-Pesa integration. Always follow security best practices when handling real payments and customer data.
+**Learning Focus**: This project prioritizes understanding M-Pesa integration patterns, modern React development, and production deployment workflows over complex business logic.
