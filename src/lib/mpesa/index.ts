@@ -17,11 +17,11 @@ class MpesaService {
    */
   async initiatePayment(request: STKPushRequest): Promise<STKPushResponse> {
     console.log('🚀 Starting M-Pesa payment process...')
-    
+
     try {
       // Format phone number
       const formattedPhone = stkPushService.formatPhoneNumber(request.phoneNumber)
-      
+
       const formattedRequest = {
         ...request,
         phoneNumber: formattedPhone
@@ -29,7 +29,7 @@ class MpesaService {
 
       // Initiate STK Push
       const response = await stkPushService.initiatePayment(formattedRequest)
-      
+
       console.log('✅ M-Pesa payment initiated successfully')
       return response
 
@@ -44,7 +44,7 @@ class MpesaService {
    */
   async processCallback(payload: PaymentCallback): Promise<void> {
     console.log('📞 Processing M-Pesa callback...')
-    
+
     try {
       // Validate callback structure
       if (!callbackService.validateCallback(payload)) {
@@ -99,7 +99,7 @@ class MpesaService {
   }> {
     try {
       const status = this.getSystemStatus()
-      
+
       if (!status.auth.hasCredentials) {
         return {
           success: false,
@@ -109,7 +109,7 @@ class MpesaService {
 
       // Try to get a token
       const token = await this.getAuthToken()
-      
+
       return {
         success: true,
         message: 'M-Pesa connectivity test successful',

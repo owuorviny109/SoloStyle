@@ -3,12 +3,12 @@ import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from 'lucide-react'
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-primary-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <Link to="/" className="text-2xl font-bold text-white mb-4 block">
+            <Link to="/" className="text-2xl font-bold gradient-text mb-4 block animate-float">
               SoleStyle
             </Link>
             <p className="text-gray-300 mb-6 max-w-md">
@@ -16,13 +16,13 @@ const Footer = () => {
               Your style, your comfort, your choice.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" className="text-gray-400 hover:text-primary-400 transition-all duration-300 transform hover:scale-110 hover:glow-effect">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" className="text-gray-400 hover:text-primary-400 transition-all duration-300 transform hover:scale-110 hover:glow-effect">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" className="text-gray-400 hover:text-primary-400 transition-all duration-300 transform hover:scale-110 hover:glow-effect">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
@@ -33,22 +33,22 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/products" className="text-gray-300 hover:text-white transition-colors">
+                <Link to="/products" className="text-gray-300 hover:text-primary-400 transition-colors duration-300">
                   All Products
                 </Link>
               </li>
               <li>
-                <Link to="/products?category=sneakers" className="text-gray-300 hover:text-white transition-colors">
+                <Link to="/products/sneakers" className="text-gray-300 hover:text-primary-400 transition-colors duration-300">
                   Sneakers
                 </Link>
               </li>
               <li>
-                <Link to="/products?category=formal" className="text-gray-300 hover:text-white transition-colors">
+                <Link to="/products/formal" className="text-gray-300 hover:text-primary-400 transition-colors duration-300">
                   Formal Shoes
                 </Link>
               </li>
               <li>
-                <Link to="/products?category=boots" className="text-gray-300 hover:text-white transition-colors">
+                <Link to="/products/boots" className="text-gray-300 hover:text-primary-400 transition-colors duration-300">
                   Boots
                 </Link>
               </li>
@@ -80,13 +80,13 @@ const Footer = () => {
             © 2025 SoleStyle. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">
+            <Link to="/privacy" className="text-gray-400 hover:text-primary-400 text-sm transition-colors duration-300">
               Privacy Policy
             </Link>
-            <Link to="/terms" className="text-gray-400 hover:text-white text-sm transition-colors">
+            <Link to="/terms" className="text-gray-400 hover:text-primary-400 text-sm transition-colors duration-300">
               Terms of Service
             </Link>
-            <Link to="/returns" className="text-gray-400 hover:text-white text-sm transition-colors">
+            <Link to="/returns" className="text-gray-400 hover:text-primary-400 text-sm transition-colors duration-300">
               Returns
             </Link>
           </div>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ShoppingCart, Star, Filter } from 'lucide-react'
+import { ShoppingCart, Star } from 'lucide-react'
 import { ApiService } from '@/lib/api'
 import { useCartStore } from '@/store/cartStore'
 import { Product } from '@/types'
@@ -95,8 +95,8 @@ const ProductsPage = () => {
                             key={category.id}
                             onClick={() => setSelectedCategory(category.id)}
                             className={`px-6 py-3 rounded-full font-medium transition-all duration-200 ${selectedCategory === category.id
-                                    ? 'bg-primary-600 text-white shadow-md'
-                                    : 'bg-white text-gray-700 border border-gray-300 hover:border-primary-300 hover:text-primary-600'
+                                ? 'bg-primary-600 text-white shadow-md'
+                                : 'bg-white text-gray-700 border border-gray-300 hover:border-primary-300 hover:text-primary-600'
                                 }`}
                         >
                             {category.name}
@@ -162,8 +162,8 @@ const ProductsPage = () => {
                                             <span
                                                 key={variant.id}
                                                 className={`px-2 py-1 text-xs rounded border ${variant.availableStock > 0
-                                                        ? 'border-gray-300 text-gray-700'
-                                                        : 'border-gray-200 text-gray-400 line-through'
+                                                    ? 'border-gray-300 text-gray-700'
+                                                    : 'border-gray-200 text-gray-400 line-through'
                                                     }`}
                                             >
                                                 {variant.size}

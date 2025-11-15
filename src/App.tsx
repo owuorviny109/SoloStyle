@@ -10,10 +10,19 @@ import CheckoutPage from './pages/CheckoutPage'
 import OrderConfirmationPage from './pages/OrderConfirmationPage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
+import PrivacyPage from './pages/PrivacyPage'
+import TermsPage from './pages/TermsPage'
+import ReturnsPage from './pages/ReturnsPage'
+import AccountPage from './pages/AccountPage'
+import FloatingActionButton from './components/ui/FloatingActionButton'
+import ParticleBackground from './components/ui/ParticleBackground'
+import ScrollIndicator from './components/ui/ScrollIndicator'
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col relative">
+      <ScrollIndicator />
+      <ParticleBackground />
       <Navbar />
       
       <main className="flex-1">
@@ -97,10 +106,82 @@ function App() {
               <ContactPage />
             </motion.div>
           } />
+          
+          <Route path="/privacy" element={
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <PrivacyPage />
+            </motion.div>
+          } />
+          
+          <Route path="/terms" element={
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <TermsPage />
+            </motion.div>
+          } />
+          
+          <Route path="/returns" element={
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ReturnsPage />
+            </motion.div>
+          } />
+          
+          <Route path="/account" element={
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <AccountPage />
+            </motion.div>
+          } />
+          
+          {/* Category Routes - redirect to products with category filter */}
+          <Route path="/products/sneakers" element={
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ProductsPage />
+            </motion.div>
+          } />
+          
+          <Route path="/products/formal" element={
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ProductsPage />
+            </motion.div>
+          } />
+          
+          <Route path="/products/boots" element={
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ProductsPage />
+            </motion.div>
+          } />
         </Routes>
       </main>
       
       <Footer />
+      <FloatingActionButton />
     </div>
   )
 }

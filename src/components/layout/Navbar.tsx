@@ -21,7 +21,7 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path
 
   return (
-    <nav className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
+    <nav className="bg-white/95 backdrop-blur-md shadow-lg border-b border-primary-100 sticky top-0 z-50 hover-glow">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -29,7 +29,8 @@ const Navbar = () => {
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="text-2xl font-bold text-primary-600"
+              className="text-2xl font-bold gradient-text animate-gradient-shift"
+              style={{ backgroundSize: '200% 200%' }}
             >
               SoleStyle
             </motion.div>

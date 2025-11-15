@@ -82,7 +82,7 @@ const HomePage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary-500 via-accent-500 to-primary-600 text-white overflow-hidden animate-gradient-shift" style={{ backgroundSize: '400% 400%' }}>
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
@@ -109,7 +109,7 @@ const HomePage = () => {
               
               <h1 className="text-4xl lg:text-7xl font-bold mb-6 leading-tight">
                 Step Into
-                <span className="block bg-gradient-to-r from-primary-200 to-white bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-primary-100 via-accent-100 to-white bg-clip-text text-transparent animate-float">
                   Your Style
                 </span>
               </h1>
@@ -122,7 +122,7 @@ const HomePage = () => {
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Link
                   to="/products"
-                  className="group bg-white text-primary-600 hover:bg-primary-50 inline-flex items-center justify-center space-x-2 px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  className="group bg-white text-primary-600 hover:bg-primary-50 inline-flex items-center justify-center space-x-2 px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:glow-effect animate-bounce-gentle"
                 >
                   <span>Shop Now</span>
                   <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -195,7 +195,7 @@ const HomePage = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gradient-to-r from-white via-primary-50 to-accent-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -206,7 +206,7 @@ const HomePage = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 text-primary-600 rounded-full mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary-100 to-accent-100 text-primary-600 rounded-full mb-4 hover:scale-110 transition-transform duration-300 animate-pulse-glow">
                   <stat.icon className="h-8 w-8" />
                 </div>
                 <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
@@ -218,7 +218,7 @@ const HomePage = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-br from-gray-50 via-primary-25 to-accent-25">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -241,7 +241,7 @@ const HomePage = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 group"
+                className="bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group hover:scale-105 hover-glow border border-primary-100"
               >
                 <div className={`inline-flex items-center justify-center w-16 h-16 ${feature.color} text-white rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <feature.icon className="h-8 w-8" />
@@ -278,7 +278,7 @@ const HomePage = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="flex items-center space-x-3 bg-gray-50 rounded-lg px-6 py-4 hover:bg-primary-50 transition-colors duration-300"
+                className="flex items-center space-x-3 bg-white/80 backdrop-blur-sm rounded-lg px-6 py-4 hover:bg-primary-50 transition-all duration-300 shadow-sm hover:shadow-md transform hover:scale-105 border border-primary-100"
               >
                 <span className="text-2xl">{brand.logo}</span>
                 <span className="font-semibold text-gray-900">{brand.name}</span>
@@ -289,7 +289,7 @@ const HomePage = () => {
       </section>
 
       {/* Featured Products */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-br from-primary-25 via-white to-accent-25">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -319,7 +319,7 @@ const HomePage = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-xl transition-all duration-300 group"
+                  className="bg-white/95 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group hover:scale-105 border border-primary-100 hover-glow"
                 >
                   <div className="relative overflow-hidden">
                     <img
@@ -379,7 +379,7 @@ const HomePage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative bg-gradient-to-r from-primary-600 to-primary-800 text-white py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-r from-primary-500 via-accent-500 to-primary-600 text-white py-20 overflow-hidden animate-gradient-shift" style={{ backgroundSize: '400% 400%' }}>
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div

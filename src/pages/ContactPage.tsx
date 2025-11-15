@@ -39,9 +39,9 @@ const ContactPage = () => {
   ]
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-primary-25 via-white to-accent-25">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-20">
+      <section className="bg-gradient-to-br from-primary-500 via-accent-500 to-primary-600 text-white py-20 animate-gradient-shift" style={{ backgroundSize: '400% 400%' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -68,9 +68,9 @@ const ContactPage = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-lg p-6 shadow-sm text-center border border-gray-100"
+                className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg text-center border border-primary-100 hover:shadow-xl transition-all duration-300 hover:scale-105 hover-glow"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 text-primary-600 rounded-full mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary-100 to-accent-100 text-primary-600 rounded-full mb-4 hover:scale-110 transition-transform duration-300 animate-bounce-gentle">
                   <info.icon className="h-8 w-8" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{info.title}</h3>
@@ -87,7 +87,7 @@ const ContactPage = () => {
             transition={{ delay: 0.4 }}
             className="max-w-2xl mx-auto"
           >
-            <div className="bg-white rounded-lg shadow-sm p-8 border border-gray-100">
+            <div className="bg-white/90 backdrop-blur-sm rounded-xl shadow-xl p-8 border border-primary-100 hover-glow">
               <div className="text-center mb-8">
                 <MessageCircle className="h-12 w-12 text-primary-600 mx-auto mb-4" />
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">Send us a Message</h2>
@@ -178,7 +178,7 @@ const ContactPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-primary-50">
+      <section className="py-16 bg-gradient-to-r from-primary-50 via-white to-accent-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
