@@ -1,37 +1,27 @@
-import { useEffect } from 'react'
+
 import { motion } from 'framer-motion'
-import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react'
+
 
 const ContactPage = () => {
-  // Scroll to footer when component mounts
-  useEffect(() => {
-    const footer = document.querySelector('footer')
-    if (footer) {
-      footer.scrollIntoView({ behavior: 'smooth' })
-    }
-  }, [])
+
 
   const contactInfo = [
     {
-      icon: Phone,
       title: 'Phone',
       details: '+254 700 123 456',
       description: 'Mon-Fri 8AM-6PM, Sat 9AM-4PM'
     },
     {
-      icon: Mail,
       title: 'Email',
       details: 'hello@solestyle.co.ke',
       description: 'We reply within 24 hours'
     },
     {
-      icon: MapPin,
       title: 'Location',
       details: 'Kakamega, Kenya',
       description: 'Visit our showroom'
     },
     {
-      icon: Clock,
       title: 'Business Hours',
       details: 'Mon-Sat: 8AM-6PM',
       description: 'Sunday: Closed'
@@ -39,19 +29,19 @@ const ContactPage = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-25 via-white to-accent-25">
+    <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-500 via-accent-500 to-primary-600 text-white py-20 animate-gradient-shift" style={{ backgroundSize: '400% 400%' }}>
+      <section className="bg-primary-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Get In Touch
             </h1>
-            <p className="text-xl md:text-2xl text-primary-100 max-w-3xl mx-auto">
+            <p className="text-lg text-primary-100 max-w-2xl mx-auto">
               We'd love to hear from you. Send us a message and we'll respond as soon as possible.
             </p>
           </motion.div>
@@ -68,11 +58,9 @@ const ContactPage = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg text-center border border-primary-100 hover:shadow-xl transition-all duration-300 hover:scale-105 hover-glow"
+                className="bg-white rounded p-4 shadow-sm text-center border border-gray-200 hover:shadow-md transition-shadow duration-200"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary-100 to-accent-100 text-primary-600 rounded-full mb-4 hover:scale-110 transition-transform duration-300 animate-bounce-gentle">
-                  <info.icon className="h-8 w-8" />
-                </div>
+
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{info.title}</h3>
                 <p className="text-primary-600 font-medium mb-1">{info.details}</p>
                 <p className="text-sm text-gray-500">{info.description}</p>
@@ -87,11 +75,10 @@ const ContactPage = () => {
             transition={{ delay: 0.4 }}
             className="max-w-2xl mx-auto"
           >
-            <div className="bg-white/90 backdrop-blur-sm rounded-xl shadow-xl p-8 border border-primary-100 hover-glow">
-              <div className="text-center mb-8">
-                <MessageCircle className="h-12 w-12 text-primary-600 mx-auto mb-4" />
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Send us a Message</h2>
-                <p className="text-gray-600">Fill out the form below and we'll get back to you soon</p>
+            <div className="bg-white rounded shadow-sm p-6 border border-gray-200">
+              <div className="text-center mb-6">
+                <h2 className="text-xl font-bold text-gray-900 mb-2">Send us a Message</h2>
+                <p className="text-gray-600 text-sm">Fill out the form below and we'll get back to you soon</p>
               </div>
 
               <form className="space-y-6">
@@ -194,16 +181,14 @@ const ContactPage = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:+254700123456"
-                className="btn-primary inline-flex items-center justify-center space-x-2"
+                className="btn-primary inline-flex items-center justify-center"
               >
-                <Phone className="h-5 w-5" />
                 <span>Call Now</span>
               </a>
               <a
                 href="mailto:hello@solestyle.co.ke"
-                className="btn-secondary inline-flex items-center justify-center space-x-2"
+                className="btn-secondary inline-flex items-center justify-center"
               >
-                <Mail className="h-5 w-5" />
                 <span>Email Us</span>
               </a>
             </div>

@@ -1,46 +1,43 @@
 import { motion } from 'framer-motion'
-import { Award, Users, Truck, Shield, Heart, Star } from 'lucide-react'
+import { } from 'lucide-react'
 
 const AboutPage = () => {
   const stats = [
-    { label: 'Happy Customers', value: '10,000+', icon: Users },
-    { label: 'Shoes Delivered', value: '25,000+', icon: Truck },
-    { label: 'Brand New', value: '2025', icon: Award },
-    { label: 'Customer Rating', value: '4.9/5', icon: Star }
+    { label: 'Happy Customers', value: '10,000+' },
+    { label: 'Shoes Delivered', value: '25,000+' },
+    { label: 'Years in Business', value: '1+' },
+    { label: 'Customer Rating', value: '4.9/5' }
   ]
 
   const values = [
     {
-      icon: Heart,
       title: 'Customer First',
       description: 'Every decision we make puts our customers at the center. Your satisfaction is our success.'
     },
     {
-      icon: Shield,
       title: 'Quality Guaranteed',
       description: 'We source only authentic, high-quality shoes from trusted brands and manufacturers.'
     },
     {
-      icon: Truck,
       title: 'Fast Delivery',
       description: 'Quick and reliable delivery across Kenya, with same-day delivery in Kakamega.'
     }
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-25 via-white to-accent-25">
+    <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-500 via-accent-500 to-primary-600 text-white py-20 animate-gradient-shift" style={{ backgroundSize: '400% 400%' }}>
+      <section className="bg-primary-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">
               About SoleStyle
             </h1>
-            <p className="text-xl md:text-2xl text-primary-100 max-w-3xl mx-auto">
+            <p className="text-lg text-primary-100 max-w-2xl mx-auto">
               Your trusted partner for premium footwear in Kenya, bringing style and comfort to every step.
             </p>
           </motion.div>
@@ -48,7 +45,7 @@ const AboutPage = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gradient-to-r from-white via-primary-50 to-accent-50">
+      <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -59,11 +56,8 @@ const AboutPage = () => {
                 transition={{ delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary-500 to-accent-500 text-white rounded-full mb-4 hover:scale-110 transition-transform duration-300 animate-pulse-glow">
-                  <stat.icon className="h-8 w-8" />
-                </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
-                <div className="text-gray-600">{stat.label}</div>
+                <div className="text-2xl font-bold text-primary-600 mb-1">{stat.value}</div>
+                <div className="text-gray-600 text-sm">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -132,13 +126,10 @@ const AboutPage = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg text-center hover:shadow-xl transition-all duration-300 hover:scale-105 border border-primary-100 hover-glow"
+                className="bg-white rounded p-6 shadow-sm text-center hover:shadow-md transition-shadow duration-200 border border-gray-200"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary-100 to-accent-100 text-primary-600 rounded-full mb-6 hover:scale-110 transition-transform duration-300">
-                  <value.icon className="h-8 w-8" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">{value.title}</h3>
+                <p className="text-gray-600 text-sm">{value.description}</p>
               </motion.div>
             ))}
           </div>

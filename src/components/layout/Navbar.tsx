@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ShoppingBag, Menu, X, User, Search } from 'lucide-react'
+import { ShoppingBag, Menu, X } from 'lucide-react'
 import { useCartStore } from '@/store/cartStore'
 
 const Navbar = () => {
@@ -21,30 +21,25 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path
 
   return (
-    <nav className="bg-white/95 backdrop-blur-md shadow-lg border-b border-primary-100 sticky top-0 z-50 hover-glow">
+    <nav className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-14">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="text-2xl font-bold gradient-text animate-gradient-shift"
-              style={{ backgroundSize: '200% 200%' }}
-            >
+            <div className="text-xl font-bold text-primary-600">
               SoleStyle
-            </motion.div>
+            </div>
           </Link>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
                 className={`text-sm font-medium transition-colors duration-200 ${
                   isActive(item.href)
-                    ? 'text-primary-600'
+                    ? 'text-primary-600 border-b-2 border-primary-600 pb-1'
                     : 'text-gray-700 hover:text-primary-600'
                 }`}
               >
@@ -53,46 +48,22 @@ const Navbar = () => {
             ))}
           </div>
           
-          {/* Right side icons */}
+          {/* Right side links */}
           <div className="flex items-center space-x-4">
-            {/* Search */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="p-2 text-gray-600 hover:text-primary-600 transition-colors"
-            >
-              <Search className="h-5 w-5" />
-            </motion.button>
-            
             {/* Account */}
-            <Link to="/account">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="p-2 text-gray-600 hover:text-primary-600 transition-colors"
-              >
-                <User className="h-5 w-5" />
-              </motion.button>
+            <Link to="/account" className="text-sm text-gray-700 hover:text-primary-600 transition-colors">
+              Account
             </Link>
             
             {/* Cart */}
-            <Link to="/cart">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="relative p-2 text-gray-600 hover:text-primary-600 transition-colors"
-              >
-                <ShoppingBag className="h-5 w-5" />
-                {cartItemsCount > 0 && (
-                  <motion.span
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    className="absolute -top-1 -right-1 bg-primary-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium"
-                  >
-                    {cartItemsCount}
-                  </motion.span>
-                )}
-              </motion.button>
+            <Link to="/cart" className="relative flex items-center space-x-1 text-sm text-gray-700 hover:text-primary-600 transition-colors">
+              <ShoppingBag className="h-4 w-4" />
+              <span>Cart</span>
+              {cartItemsCount > 0 && (
+                <span className="bg-primary-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium ml-1">
+                  {cartItemsCount}
+                </span>
+              )}
             </Link>
             
             {/* Mobile menu button */}

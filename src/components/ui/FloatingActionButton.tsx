@@ -38,7 +38,7 @@ const FloatingActionButton = () => {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-4 right-4 z-50">
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -92,24 +92,16 @@ const FloatingActionButton = () => {
       </AnimatePresence>
 
       {/* Main FAB */}
-      <motion.button
+      <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 bg-gradient-to-r from-primary-500 to-accent-500 hover:from-primary-600 hover:to-accent-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        animate={{ rotate: isOpen ? 45 : 0 }}
+        className="w-12 h-12 bg-primary-600 hover:bg-primary-700 text-white rounded-full shadow-lg transition-colors duration-200 flex items-center justify-center"
       >
-        <motion.div
-          animate={{ rotate: isOpen ? -45 : 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          {isOpen ? (
-            <div className="w-6 h-0.5 bg-white"></div>
-          ) : (
-            <MessageCircle className="h-6 w-6" />
-          )}
-        </motion.div>
-      </motion.button>
+        {isOpen ? (
+          <div className="w-4 h-0.5 bg-white rotate-45"></div>
+        ) : (
+          <MessageCircle className="h-5 w-5" />
+        )}
+      </button>
     </div>
   )
 }

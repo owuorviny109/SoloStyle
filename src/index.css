@@ -8,8 +8,9 @@
   }
   
   body {
-    @apply bg-gradient-to-br from-primary-50 via-white to-accent-50 text-gray-900 font-sans;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    @apply bg-gray-50 text-gray-900 font-sans;
+    font-size: 14px;
+    line-height: 1.5;
     min-height: 100vh;
   }
   
@@ -20,15 +21,15 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-gradient-to-r from-primary-500 to-accent-500 hover:from-primary-600 hover:to-accent-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none;
+    @apply bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded font-medium transition-colors duration-200 text-sm disabled:opacity-50 disabled:cursor-not-allowed;
   }
   
   .btn-secondary {
-    @apply border border-primary-200 hover:border-primary-300 bg-white hover:bg-primary-50 text-primary-700 px-6 py-3 rounded-lg font-medium transition-all duration-200 shadow-sm hover:shadow-md transform hover:scale-105;
+    @apply border border-gray-300 hover:border-gray-400 bg-white hover:bg-gray-50 text-gray-700 px-4 py-2 rounded font-medium transition-colors duration-200 text-sm;
   }
   
   .input-field {
-    @apply border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary-400 focus:border-primary-400 transition-all duration-200 bg-white/80 backdrop-blur-sm hover:bg-white;
+    @apply border border-gray-300 rounded px-3 py-2 focus:ring-1 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200 bg-white text-sm;
   }
   
   .input-error {
@@ -36,11 +37,11 @@
   }
   
   .card {
-    @apply bg-white/90 backdrop-blur-sm rounded-xl shadow-lg border border-primary-100 p-6 hover:shadow-xl hover:border-primary-200 transition-all duration-300 transform hover:scale-105;
+    @apply bg-white rounded border border-gray-200 p-4 hover:shadow-sm transition-shadow duration-200;
   }
   
   .product-card {
-    @apply bg-white/95 backdrop-blur-sm rounded-xl shadow-lg border border-primary-100 overflow-hidden hover:shadow-2xl hover:scale-105 hover:border-primary-300 transition-all duration-300 cursor-pointer;
+    @apply bg-white rounded border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-200 cursor-pointer;
   }
   
   .loading-skeleton {
@@ -62,31 +63,11 @@
     display: none;
   }
   
-  .gradient-text {
-    @apply bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent;
+  .text-primary {
+    @apply text-primary-600;
   }
   
-  .glass-effect {
-    @apply bg-white/20 backdrop-blur-md border border-white/30;
-  }
-  
-  .glow-effect {
-    box-shadow: 0 0 20px rgba(242, 128, 11, 0.3);
-  }
-  
-  .hover-glow:hover {
-    box-shadow: 0 0 30px rgba(242, 128, 11, 0.4);
-  }
-  
-  .animate-text-shimmer {
-    background: linear-gradient(110deg, #f2800b 45%, #f97316 55%, #f2800b);
-    background-size: 200% 100%;
-    animation: shimmer 2s linear infinite;
-  }
-  
-  @keyframes shimmer {
-    to {
-      background-position: 200% 0;
-    }
+  .border-light {
+    @apply border-gray-200;
   }
 }

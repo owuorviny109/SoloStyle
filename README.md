@@ -1,32 +1,38 @@
-# M-Pesa E-commerce Integration Learning Project
+# SoleStyle - Professional E-commerce Platform
 
-A hands-on learning project demonstrating M-Pesa payment integration in a modern React e-commerce application. Built to understand Safaricom's Daraja API implementation and real-world payment processing.
+A modern, professional e-commerce platform for premium footwear with integrated M-Pesa payment processing. Built with React, TypeScript, and Tailwind CSS to deliver a business-grade shopping experience.
 
-## Learning Goals Achieved
+## Features
 
-### M-Pesa Integration Mastery
-- **OAuth Token Management** - Automated token generation and refresh
-- **STK Push Implementation** - Customer-initiated payments via phone
-- **Callback Handling** - Real-time payment status updates
-- **Error Handling** - Robust payment failure management
-- **Sandbox Testing** - Complete testing environment setup
+### E-commerce Platform
+- **Professional Design** - Clean, business-focused interface inspired by leading e-commerce sites
+- **Product Catalog** - Comprehensive shoe collection from top brands
+- **Shopping Cart** - Persistent cart with real-time updates
+- **Secure Checkout** - M-Pesa integration for Kenyan customers
+- **Order Management** - Complete order tracking and confirmation system
+- **Responsive Design** - Optimized for desktop, tablet, and mobile devices
 
-### Technical Skills Developed
-- **React 18 + TypeScript** - Modern frontend development
-- **Express.js API** - Backend payment processing
-- **State Management** - Zustand for cart and order state
-- **Form Validation** - React Hook Form + Zod schemas
-- **Responsive Design** - Mobile-first Tailwind CSS
-- **Production Deployment** - Vercel deployment with environment variables
+### Technical Implementation
+- **React 18 + TypeScript** - Modern frontend with type safety
+- **Tailwind CSS** - Professional styling with custom design system
+- **Express.js API** - Robust backend for payment processing
+- **State Management** - Zustand for efficient state handling
+- **Form Validation** - React Hook Form with Zod schemas
+- **M-Pesa Integration** - Complete Daraja API implementation
 
-## What Was Built
+## Platform Overview
 
-### Core Features
-- **12-Product Catalog** - Nike, Adidas, Puma, Vans, Converse shoes
-- **Shopping Cart** - Add/remove items with persistent storage
-- **M-Pesa Checkout** - Complete payment flow with phone verification
-- **Order Management** - Order tracking and confirmation system
-- **Responsive UI** - Works on desktop, tablet, and mobile
+### Product Catalog
+- **Premium Footwear** - Curated selection of Nike, Adidas, Puma, Vans, and Converse
+- **Detailed Product Pages** - High-quality images, descriptions, and sizing options
+- **Category Navigation** - Easy browsing by brand and shoe type
+- **Search Functionality** - Quick product discovery
+
+### User Experience
+- **Professional Interface** - Clean, modern design without distracting elements
+- **Intuitive Navigation** - Clear menu structure and user flows
+- **Mobile Optimized** - Seamless experience across all devices
+- **Fast Performance** - Optimized loading and smooth interactions
 
 ### Technical Architecture
 ```
@@ -125,56 +131,95 @@ npx vercel --prod
 # Update callback URL to production domain
 ```
 
-## Project Metrics
+## Platform Statistics
 
-- **12 Products** - Complete shoe catalog
-- **5 Brands** - Nike, Adidas, Puma, Vans, Converse
-- **3 Pages** - Home, About, Contact with modern design
-- **100% Mobile Responsive** - Works on all devices
-- **Real M-Pesa Testing** - Actual payment integration
+- **Complete Product Catalog** - 12 premium shoe models
+- **Multi-Brand Support** - Nike, Adidas, Puma, Vans, Converse
+- **Full Page Coverage** - Home, Products, About, Contact, Account, Legal pages
+- **Mobile Responsive** - 100% compatibility across devices
+- **Payment Integration** - Full M-Pesa implementation for Kenya
+- **Professional Design** - Business-grade user interface
 
-## Skills Demonstrated
+## Technology Stack
 
-### Frontend Development
-- Modern React patterns and hooks
-- TypeScript for type safety
-- Responsive design with Tailwind CSS
-- Form handling and validation
-- State management with Zustand
+### Frontend
+- **React 18** - Modern component-based architecture
+- **TypeScript** - Type-safe development
+- **Tailwind CSS** - Professional styling framework
+- **Framer Motion** - Smooth animations and transitions
+- **React Router** - Client-side navigation
+- **Zustand** - Lightweight state management
 
-### Backend Development
-- Express.js API development
-- M-Pesa API integration
-- Environment variable management
-- Error handling and logging
-- Webhook/callback processing
+### Backend
+- **Express.js** - RESTful API server
+- **M-Pesa Daraja API** - Payment processing
+- **Environment Management** - Secure configuration
+- **Error Handling** - Robust error management
+- **Webhook Processing** - Real-time payment callbacks
 
-### DevOps & Deployment
-- Git version control
-- Vercel deployment
-- Environment configuration
-- Production vs development setup
+### Development & Deployment
+- **Vite** - Fast development build tool
+- **Vercel** - Production deployment platform
+- **Git** - Version control
+- **TypeScript** - Development tooling
 
-## Live Demo
+## Getting Started
 
-**Production URL**: https://mpesa-ecommerce-blueprint.vercel.app/
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+- M-Pesa Sandbox credentials (for payment testing)
 
-Test the complete M-Pesa integration flow:
-1. Browse products and add to cart
-2. Proceed to checkout
-3. Enter Kenyan phone number (use 0708374149 for sandbox)
-4. Complete M-Pesa payment flow
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/solestyle.git
 
-## Next Steps for Production
+# Install dependencies
+npm install
 
-- [ ] Add user authentication
-- [ ] Implement order history
-- [ ] Add inventory management
-- [ ] Set up email notifications
-- [ ] Add analytics tracking
-- [ ] Implement proper error logging
-- [ ] Add unit and integration tests
+# Set up environment variables
+cp .env.example .env
+# Add your M-Pesa credentials
+
+# Start development server
+npm run dev
+```
+
+### Environment Setup
+```bash
+# M-Pesa Configuration
+VITE_MPESA_ENVIRONMENT=sandbox
+VITE_MPESA_CONSUMER_KEY=your_key
+VITE_MPESA_CONSUMER_SECRET=your_secret
+VITE_MPESA_SHORTCODE=174379
+VITE_MPESA_PASSKEY=your_passkey
+```
+
+## Production Deployment
+
+The platform is production-ready and can be deployed to Vercel, Netlify, or any modern hosting platform.
+
+```bash
+# Build for production
+npm run build
+
+# Deploy to Vercel
+npx vercel --prod
+```
+
+## Contributing
+
+This is a professional e-commerce platform. Contributions are welcome for:
+- Performance improvements
+- UI/UX enhancements
+- Additional payment methods
+- Feature additions
+
+## License
+
+MIT License - see LICENSE file for details.
 
 ---
 
-**Learning Focus**: This project prioritizes understanding M-Pesa integration patterns, modern React development, and production deployment workflows over complex business logic.
+**SoleStyle** - Professional footwear e-commerce platform for the Kenyan market.

@@ -14,15 +14,11 @@ import PrivacyPage from './pages/PrivacyPage'
 import TermsPage from './pages/TermsPage'
 import ReturnsPage from './pages/ReturnsPage'
 import AccountPage from './pages/AccountPage'
-import FloatingActionButton from './components/ui/FloatingActionButton'
-import ParticleBackground from './components/ui/ParticleBackground'
-import ScrollIndicator from './components/ui/ScrollIndicator'
+
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col relative">
-      <ScrollIndicator />
-      <ParticleBackground />
+    <div className="min-h-screen flex flex-col">
       <Navbar />
       
       <main className="flex-1">
@@ -181,7 +177,6 @@ function App() {
       </main>
       
       <Footer />
-      <FloatingActionButton />
     </div>
   )
 }
